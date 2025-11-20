@@ -1,0 +1,154 @@
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(135deg, #4a6fa5 0%, #5b7fb5 100%);
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.header-left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    padding: 0 10px;
+}
+
+.header-logo {
+    font-size: 50px;
+    color: white;
+}
+
+.header-title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    gap: 0px;
+}
+
+.header-title span:first-child {
+    font-size: 16px;
+    color: #e0e7ff;
+    font-weight: 700;
+}
+
+.header-title span:last-child {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e0e7ff;
+}
+
+.header-middle {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+    padding-right: 60px;
+}
+
+.notification-icon {
+    position: relative;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+    padding: 5px 5px 15px 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.notification-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+}
+
+.username {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.user-dropdown-toggle {
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: white !important;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.user-dropdown-toggle:hover,
+.user-dropdown-toggle:focus,
+.user-dropdown-toggle:active {
+    background: transparent;
+    border: none;
+    color: white !important;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.user-dropdown-toggle::after {
+    display: none !important;
+}
+
+.user-dropdown-menu {
+    margin-top: 10px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+}
+
+.user-dropdown-menu .dropdown-item {
+    padding: 10px 16px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdown-icon {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.logout-item {
+    color: #dc3545;
+}
+
+.logout-item:hover {
+    background-color: #fff5f5;
+    color: #dc3545;
+}

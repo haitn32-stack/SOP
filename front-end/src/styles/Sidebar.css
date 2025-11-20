@@ -1,0 +1,273 @@
+.sidebar {
+    --sidebar-text-color: #cbd5e1;
+    --sidebar-active-bg: #1e3a8a;
+    --sidebar-active-color: #ffffff;
+    --sidebar-active-border-color: #3b82f6;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    transition: width 0.3s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 60px;
+}
+
+.sidebar.light {
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+}
+
+.sidebar.dark {
+    background-color: #1a1d23;
+    border-right: 1px solid #2d3139;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.sidebar-menu {
+    flex: 1;
+    padding: 10px 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.menu-item.active {
+    position: relative;
+    font-weight: 600;
+}
+
+/* Hợp nhất các style active để dùng biến CSS */
+.sidebar.light .menu-item.active,
+.sidebar.dark .menu-item.active {
+    background-color: var(--sidebar-active-bg);
+    color: var(--sidebar-active-color);
+}
+
+.sidebar.light .menu-item {
+    color: #212529;
+}
+
+.sidebar.dark .menu-item {
+    color: #e9ecef;
+}
+
+/*
+ * 2. THANH DỌC KHI ACTIVE
+*/
+.menu-item.active::after,
+.submenu-item.active::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--sidebar-active-border-color);
+}
+
+/*
+ * 3. SỬA LẠI HIỆU ỨNG HOVER
+ * Khi hover, màu nền và màu chữ sẽ giống hệt như khi active
+*/
+.sidebar.light .menu-item:hover,
+.sidebar.dark .menu-item:hover {
+    background-color: var(--sidebar-active-bg);
+    color: var(--sidebar-active-color);
+}
+
+
+.menu-icon {
+    font-size: 18px;
+    min-width: 20px;
+    margin-right: 12px;
+}
+
+.sidebar.collapsed .menu-icon {
+    margin-right: 0;
+}
+
+.menu-text {
+    flex: 1;
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.submenu-arrow {
+    margin-left: auto;
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.submenu-arrow.expanded {
+    transform: rotate(90deg);
+}
+
+.submenu {
+    padding-left: 20px;
+}
+
+.submenu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px 10px 48px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    position: relative;
+}
+
+.sidebar.light .submenu-item {
+    color: #6c757d;
+}
+
+.sidebar.dark .submenu-item {
+    color: #adb5bd;
+}
+
+/* SỬA HOVER CHO SUBMENU (GIỐNG HỆT ACTIVE) */
+.sidebar.light .submenu-item:hover,
+.sidebar.dark .submenu-item:hover,
+.submenu-item:hover {
+    background-color: var(--sidebar-active-bg);
+    color: var(--sidebar-active-color);
+}
+
+/* Style active cho submenu (đã có) */
+.submenu-item.active {
+    background-color: var(--sidebar-active-bg);
+    color: var(--sidebar-active-color);
+    font-weight: 600;
+}
+
+/* * PHẦN CÒN LẠI CỦA FILE (GIỮ NGUYÊN)
+*/
+
+.sidebar-bottom {
+    border-top: 1px solid;
+    padding: 15px;
+}
+
+.sidebar.light .sidebar-bottom {
+    border-color: #dee2e6;
+}
+
+.sidebar.dark .sidebar-bottom {
+    border-color: #2d3139;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.toggle-label {
+    font-size: 14px;
+    order: 2;
+}
+
+.sidebar.light .toggle-label {
+    color: #212529;
+}
+
+.sidebar.dark .toggle-label {
+    color: #e9ecef;
+}
+
+.page-switch {
+    margin: 0;
+    order: 1;
+}
+
+.page-switch .form-check-input {
+    cursor: pointer;
+}
+
+.collapse-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+}
+
+.sidebar.light .collapse-button {
+    color: #212529;
+}
+
+.sidebar.dark .collapse-button {
+    color: #e9ecef;
+}
+
+/* Bỏ hover cho collapse-button */
+.sidebar.light .collapse-button:hover {
+    background-color: transparent;
+}
+
+.sidebar.dark .collapse-button:hover {
+    background-color: transparent;
+}
+
+.collapse-icon {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.sidebar.collapsed .collapse-icon {
+    margin-right: 0;
+}
+
+.collapse-text {
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* Scrollbar styling */
+.sidebar-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar.light .sidebar-content::-webkit-scrollbar-thumb {
+    background: #dee2e6;
+    border-radius: 3px;
+}
+
+.sidebar.dark .sidebar-content::-webkit-scrollbar-thumb {
+    background: #2d3139;
+    border-radius: 3px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb:hover {
+    background: #adb5bd;
+}

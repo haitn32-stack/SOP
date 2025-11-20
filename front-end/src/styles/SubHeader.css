@@ -1,0 +1,25 @@
+.sub-header {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+    z-index: 998;
+    transition: padding-left 0.3s ease;
+}
+
+.sub-header-content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.page-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #212529;
+    margin: 0;
+}

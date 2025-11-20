@@ -1,0 +1,15 @@
+const path = require('path');
+
+module.exports = {
+  // Chỉ đường cho CLI đến file config database
+  'config': path.resolve('app', 'config', 'database.js'),
+
+  // Chỉ đường đến thư mục models
+  'models-path': path.resolve('app', 'models'),
+
+  // Chỉ đường đến thư mục migrations
+  'migrations-path': path.resolve('app', 'migrations'),
+
+  // Chỉ đường đến thư mục seeders
+  'seeders-path': path.resolve('app', 'seeders')
+};

@@ -1,0 +1,118 @@
+.user-creation-modal .modal-dialog {
+    max-width: 812px;
+    width: 812px;
+}
+
+.user-creation-modal .modal-content {
+    height: auto;
+    max-height: 90vh;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.user-creation-modal .modal-header {
+    border-bottom: none;
+    padding: 24px 32px 16px 32px;
+}
+
+.user-creation-modal .ant-picker {
+    width: 100%;
+    padding-left: 40px !important;
+    background-color: #f9fafb;
+    border: 1px solid #f9fafb;
+}
+
+.user-creation-modal .modal-title {
+    color: #111827;
+    font-weight: 600;
+    font-size: 20px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.user-creation-modal .modal-body {
+    padding: 0 32px;
+    flex: 1;
+}
+
+.user-creation-modal .modal-footer {
+    border-top: none;
+    padding: 24px 32px;
+    justify-content: center;
+}
+
+/* Style chung cho Form Control (Giống UserProfileModal) */
+.user-creation-modal .form-control,
+.user-creation-modal .form-select {
+    background-color: #f9fafb;
+    border: 1px solid #f9fafb;
+}
+
+.user-creation-modal .form-control:focus,
+.user-creation-modal .form-select:focus {
+    background-color: #fff;
+    border-color: #2563eb;
+    box-shadow: none;
+}
+
+/* Placeholder */
+.user-creation-modal .form-control::placeholder,
+.user-creation-modal .form-select {
+    color: #9ca3af;
+}
+
+.user-creation-modal .form-select option:not(:first-child) {
+    color: #111827;
+}
+
+.user-creation-modal .form-control:read-only,
+.user-creation-modal .form-control[disabled] {
+    background-color: #f9fafb;
+    color: #9ca3af;
+    opacity: 1;
+}
+
+/* Xử lý lỗi validation */
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    border-color: #dc3545 !important;
+    background-image: none !important;
+}
+
+/* CSS field ngày sinh (Giống UserProfileModal) */
+.date-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.date-input-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #6b7280;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.custom-date-input {
+    padding-left: 40px !important;
+    position: relative;
+    background-color: #f9fafb;
+    border-color: #f9fafb;
+}
+
+.custom-date-input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
